@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="ca03dc12-3146-4ff9-bfc7-1e824f465ebd">
+    <data-source source="LOCAL" name="db" uuid="2625359b-3109-4027-956a-6b9f0331fa38">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\WebDevelopment\week9\shop_back\db.sqlite3</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="630960c7-c68d-44cf-9546-18902951a49e">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/shop_back/settings.py</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\WebDevelopment\week9\shop_back\db.sqlite3</jdbc-url>
     </data-source>

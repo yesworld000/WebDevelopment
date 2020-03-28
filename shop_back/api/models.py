@@ -1,16 +1,12 @@
 from django.db import models
 
 
-# Create your models here.
-
-import django.db
-
-
-class Category(django.db.models.Model):
-    name = django.db.models.CharField(max_length=50)
+class Category(models.Model):
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return '{}: {}'.format(self.id, self.name)
+        return '{}: {}'.format(self.id,
+                               self.name)
 
     def to_json(self):
         return {
@@ -19,21 +15,23 @@ class Category(django.db.models.Model):
         }
 
 
-class Product(django.db.models.Model):
-    name = django.db.models.CharField(max_length=50)
-    price = django.db.models.FloatField()
-    description = django.db.models.TextField(default='')
-    count = django.db.models.IntegerField()
-    # category = django.db.models.ForeignKey(Category, on_delete=django.db.models.CASCADE)
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.FloatField(default=0)
+    description = models.TextField(default='')
+    count = models.IntegerField(default=10)
+    category = models.ForeignKey(Category, null=True,
+                                 on_delete=models.CASCADE)
 
     def __str__(self):
-        return '{}: {}'.format(self.id, self.name)
+        return '{}: {}'.format(self.name,
+                               self.description)
 
     def to_json(self):
         return {
             'id': self.id,
             'name': self.name,
             'price': self.price,
-            'count': self.count,
-            'description': self.description
-            }
+            'description': self.description,
+            'count': self.count
+        }
