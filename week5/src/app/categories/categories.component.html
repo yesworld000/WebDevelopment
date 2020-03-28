@@ -1,0 +1,13 @@
+
+<ul class="heroes">
+  <li *ngFor="let category of categories" (click)="onSelect(category)">
+    <a routerLink="/categories/{{category.id}}/products"></a>
+      {{category.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedCategory">
+  <h2>Products of {{selectedCategory.name}} category</h2>
+</div>
+
+<app-product-list [categories]="selectedCategory"></app-product-list>

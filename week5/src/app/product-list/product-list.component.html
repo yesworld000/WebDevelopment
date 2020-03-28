@@ -1,0 +1,13 @@
+
+<h3>Products of {{category.name}}</h3>
+<button (click)="goBack()">Back</button>
+<br>
+<div *ngFor="let product of category.products" style="display: inline-block; width: 60%;">
+  <h3>{{product.name}}</h3>
+  <p>
+  <img src="{{product.image}}" alt="picture-of-product"><br>
+  {{product.description}}<br>
+  Rating: {{product.rating}}<br>
+  <a href="{{product.link}}">More</a>
+  </p>
+</div>
